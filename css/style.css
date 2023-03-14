@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body *{
+    box-sizing: border-box; /*diz que todas as caixas (divs) terão que respeitar seus espaços*/
+}
+
+.main-login{ /*div pai de todas as divs internas*/
+    width: 100vw; /*viewport largura - proporcional a tela*/
+    height: 100vh; /*viewport altura - proporcional a tela*/
+    background: #201b2c;
+    display: flex; 
+    justify-content: center; /*justificando o conteúdo de forma centralizada*/
+    align-items: center; /*alinhando o conteúdo de forma centralizada*/
+}
+
+.left-login{
+    width: 50vw; /*viewport largura com proporção referente a div pai (main-login)*/
+    height: 100vh; /*viewport altura - proporcional a div pai (main-login)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*disposição do conteúdo, nesse caso está em coluna*/
+}
+
+.left-login > h1{
+    font-size: 3vw; /*viewport largura com proporção referente a div (left-login)*/
+    color: #77ffc0;
+}
+
+.left-login-img{
+    width: 25vw; /*viewport largura com proporção referente a div (left-login)*/
+}
+
+.right-login{
+    width: 50vw; /*viewport largura com proporção referente a div pai (main-login)*/
+    height: 100vh; /*viewport altura - proporcional a div pai (main-login)*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login{
+    width: 60%; /*ocupa x% da viewport da div right-login (60% do 50vw)*/ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px; /*espaçamento interno*/
+    background: #2f2841;
+    border-radius: 20px; /*arredondamento das pontas*/
+    box-shadow: 0px 10px 40px #00000056; /*sombra*/
+}
+
+.card-login > h1{
+    color: #00ff88;
+    font-weight: 800; /*peso da fonte*/
+    margin: 0;
+}
+
+.textfield{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input{
+    width: 100%;
+    border: none; /*retira valor para borda*/
+    border-radius: 10px;
+    padding: 15px;
+    background: #514869;
+    color: #f0ffffde;
+    font-size: 12pt; /*tamanho da fonte*/
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none; /*retira a linha externa de marcação do conteúdo (input)*/
+    box-sizing: border-box; /*a div filho respeita o limite da div pai*/
+}
+
+.textfield > label{
+    color: #f0ffffde;
+    margin-bottom: 10px; /*margem inferior*/
+}
+
+.textfield > input::placeholder{
+    color:#f0ffff94; /*cor do texto interno do input*/
+}
+
+.btn-login{
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase; /*o texto passará a ter caixa alta*/
+    font-weight: 800;
+    letter-spacing: 3px; /*espaço entre as letras*/
+    color: #2b134b;
+    background: #00ff88;
+    cursor: pointer; /*ao passar o mouse em cima do botão, mostrará que é um contúdo clicavel*/
+    box-shadow: 0px 10px 40px -12px #00ff8052;
+}
+
+@media only screen  and (max-width: 950px){ /*para telas com até 950px*/
+    .card-login{
+        width: 85%; /*o conteúdo irá se redimensionar conforme a proporção de tela*/
+    }
+}
+@media only screen  and (max-width: 600px){ /*para telas com até 600px*/
+    .main-login{
+        flex-direction: column; /*o conteúdo irá se dispor em coluna*/
+    }
+    .left-login > h1{
+        display: none; /*o texto não aparecerá*/
+    }
+    .left-login{
+        width: 100%; /*o conteúdo ocupará largura 100% do espaço*/
+        height: auto; /*terá altura automática*/
+    }
+
+    .right-login{
+        width: 100%; /*o conteúdo ocupará largura 100% do espaço*/
+        height: auto; /*terá altura automática*/
+    }
+
+    .left-login-img{
+        width: 50vw; /*a imagem irá se adequar ao tamanho de 50vw*/
+    }
+
+    .card-login{
+        width: 90%; /*terá largura de até 90%qqqe*/
+    }
+}
